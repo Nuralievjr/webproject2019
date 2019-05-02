@@ -1,0 +1,61 @@
+<div id="info-1">
+    <div id="adv-1">
+            <img id="dostavka" src="assets/images/dostavka.png">
+            <p style="position:relative;top:-45px;left: 60px;font-family: Raleway, sans-serif;width: 400px;margin-right: 0;">Безопасная оплата & Легкий возврат</p>
+    </div>
+    <div id="adv-2">
+            <img id="dostavka" src="assets/images/dollar.png">
+            <p style="position:relative;top:-45px;left: 60px;font-family: Raleway, sans-serif;width: 400px;margin-right: 0;">100% Гарантия возврата</p>
+    </div>
+    <div id="adv-3">
+            <img id="dostavka" src="assets/images/always.png">
+            <p style="position:relative;top:-45px;left: 60px;font-family: Raleway, sans-serif;width: 400px;margin-right: 0;">Онлайн поддержка 24/7</p>
+    </div>
+</div>
+
+
+<carousel>
+  <slide>
+    <div class="text-center py-5 bg-dark text-white" style="background-image: url('assets/images/1.jpg');">
+      <h2>First custom content</h2>
+      <div class="lead" >
+          
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </div>
+  </slide>
+  <slide>
+    <div class="text-center py-5 bg-dark text-white">
+      <h2>Second custom content</h2>
+      <div class="lead">
+        <h3>Second slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </div>
+  </slide>
+  <slide>
+    <div class="text-center py-5 bg-dark text-white">
+      <h2>Third custom content</h2>
+      <div class="lead">
+        <h3>Third slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum. </p>
+      </div>
+    </div>
+  </slide>
+</carousel>
+
+<div class="m-car">
+    
+  <h2 style="text-align:center;font-size:36px;padding-top: 50px;font-family: 'Archivo', sans-serif;">Популярные продуты</h2>
+    <div id="topsales">
+      <div class="product" *ngFor="let p of productspop">
+        <a class="product-here" href="single-page.html"><img src="{{p.image}}" title="product-name" style="height: 210px;width: 170px;" /></a>
+        <h4 id="proname"><a href="single-page.html">{{p.name}}</a></h4>
+        <a class="product-btn" href="single-page.html"><span>{{p.price}} тг</span><small>Купить</small><label> </label></a>
+      </div>
+    </div>
+</div>
+
+
+

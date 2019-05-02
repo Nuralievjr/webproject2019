@@ -1,0 +1,55 @@
+
+<div class="m-list">
+    <div class="container">
+      <div class="btn-toolbar">   
+        <div class="btn-group btn-group-sm">
+          <div class="btn btn-default">SEARCH BY NAME:</div>
+          <button class="btn btn-default">A</button>
+          <button class="btn btn-default">B</button>
+          <button class="btn btn-default">C</button>
+          <button class="btn btn-default">D</button>
+          <button class="btn btn-default">E</button>
+          <button class="btn btn-default">F</button>
+          <button class="btn btn-default">G</button>
+          <button class="btn btn-default">H</button>
+          <button class="btn btn-default">I</button>
+          <button class="btn btn-default">J</button>
+          <button class="btn btn-default">K</button>
+          <button class="btn btn-default">L</button>
+          <button class="btn btn-default">M</button>
+          <button class="btn btn-default">N</button>
+          <button class="btn btn-default">O</button>
+          <button class="btn btn-default">P</button>
+          <button class="btn btn-default">Q</button>
+          <button class="btn btn-default">R</button>
+          <button class="btn btn-default">S</button>
+          <button class="btn btn-default">T</button>
+          <button class="btn btn-default">U</button>
+          <button class="btn btn-default">V</button>
+          <button class="btn btn-default">W</button>
+          <button class="btn btn-default">X</button>
+          <button class="btn btn-default">Y</button>
+          <button class="btn btn-default">Z</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="search">
+        <input type="text" class="searchTerm" placeholder="What are you looking for?">
+        <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+        </button>
+    </div>
+</div>
+
+
+<div id="topsales">
+    <div class="product" *ngFor="let p of products">
+      <a class="product-here" href="single-page.html"><img src="{{p.image}}" title="product-name" style="height: 210px;width: 170px;" /></a>
+      <h4 id="proname"><a href="single-page.html">{{p.name}}</a></h4>
+      <a class="product-btn" href="single-page.html"><span>{{p.price}} тг</span><small>Купить</small><label> </label></a>
+    </div>
+  </div>
+  
