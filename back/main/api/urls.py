@@ -10,6 +10,9 @@ urlpatterns = [
     path('products/<int:pk>', views.ProductDetail.as_view()),
     path('products/', views.Products.as_view()),
     path('products/popular', views.ProductsPopular.as_view()),
+    path('contact/us',views.Contact.as_view()),
+    path('products/<int:pk>/ivisit',views.putLike),
+    path('registration', views.CreateUser.as_view())
 
 ]
 

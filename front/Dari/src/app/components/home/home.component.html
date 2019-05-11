@@ -47,12 +47,13 @@
 
 <div class="m-car">
     
-  <h2 style="text-align:center;font-size:36px;padding-top: 50px;font-family: 'Archivo', sans-serif;">Популярные продуты</h2>
+  <h2 style="text-align:center;font-size:36px;padding-top: 50px;font-family: 'Archivo', sans-serif;">Top products</h2>
     <div id="topsales">
       <div class="product" *ngFor="let p of productspop">
-        <a class="product-here" href="single-page.html"><img src="{{p.image}}" title="product-name" style="height: 210px;width: 170px;" /></a>
-        <h4 id="proname"><a href="single-page.html">{{p.name}}</a></h4>
-        <a class="product-btn" href="single-page.html"><span>{{p.price}} тг</span><small>Купить</small><label> </label></a>
+        <a class="product-here" [routerLink]="['/productdetail', p.id]"><img src="{{p.image}}" title="product-name" style="height: 210px;width: 170px;" /></a>
+        <h4 id="proname"><a [routerLink]="['/productdetail', p.id]">{{p.name}}</a></h4>
+        <a class="product-btn" [routerLink]="['/productdetail', p.id]"><span>${{p.price}}</span><small>Buy</small><label> </label></a>
+        <p>Visited <br> <span style="color:lightseagreen">{{p.visit}} times</span></p>
       </div>
     </div>
 </div>

@@ -1,0 +1,23 @@
+.container{
+    margin-bottom: 200px;
+}
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+.card{
+    width: 80%;
+}
+
+.list-group-item {
+    z-index: 2;
+    color: #fff;
+    background-color: #fff;
+    border-color: 1px solid rgba(0,0,0,.125);
+}
+.list-group-item.active {
+    z-index: 2;
+    background-color: #fff;
+    border-color: rgba(0,0,0,.125)
+}

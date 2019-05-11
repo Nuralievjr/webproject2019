@@ -1,55 +1,58 @@
 
 <div class="m-list">
-    <div class="container">
+    <div class="alphabet">
       <div class="btn-toolbar">   
         <div class="btn-group btn-group-sm">
           <div class="btn btn-default">SEARCH BY NAME:</div>
-          <button class="btn btn-default">A</button>
-          <button class="btn btn-default">B</button>
-          <button class="btn btn-default">C</button>
-          <button class="btn btn-default">D</button>
-          <button class="btn btn-default">E</button>
-          <button class="btn btn-default">F</button>
-          <button class="btn btn-default">G</button>
-          <button class="btn btn-default">H</button>
-          <button class="btn btn-default">I</button>
-          <button class="btn btn-default">J</button>
-          <button class="btn btn-default">K</button>
-          <button class="btn btn-default">L</button>
-          <button class="btn btn-default">M</button>
-          <button class="btn btn-default">N</button>
-          <button class="btn btn-default">O</button>
-          <button class="btn btn-default">P</button>
-          <button class="btn btn-default">Q</button>
-          <button class="btn btn-default">R</button>
-          <button class="btn btn-default">S</button>
-          <button class="btn btn-default">T</button>
-          <button class="btn btn-default">U</button>
-          <button class="btn btn-default">V</button>
-          <button class="btn btn-default">W</button>
-          <button class="btn btn-default">X</button>
-          <button class="btn btn-default">Y</button>
-          <button class="btn btn-default">Z</button>
+          <button (click)="SearchByCharacter('A')" class="btn btn-default">A</button>
+          <button (click)="SearchByCharacter('B')" class="btn btn-default">B</button>
+          <button (click)="SearchByCharacter('C')" class="btn btn-default">C</button>
+          <button (click)="SearchByCharacter('D')" class="btn btn-default">D</button>
+          <button (click)="SearchByCharacter('E')" class="btn btn-default">E</button>
+          <button (click)="SearchByCharacter('F')" class="btn btn-default">F</button>
+          <button (click)="SearchByCharacter('G')" class="btn btn-default">G</button>
+          <button (click)="SearchByCharacter('H')" class="btn btn-default">H</button>
+          <button (click)="SearchByCharacter('I')" class="btn btn-default">I</button>
+          <button (click)="SearchByCharacter('J')" class="btn btn-default">J</button>
+          <button (click)="SearchByCharacter('K')" class="btn btn-default">K</button>
+          <button (click)="SearchByCharacter('L')" class="btn btn-default">L</button>
+          <button (click)="SearchByCharacter('M')" class="btn btn-default">M</button>
+          <button (click)="SearchByCharacter('N')" class="btn btn-default">N</button>
+          <button (click)="SearchByCharacter('O')" class="btn btn-default">O</button>
+          <button (click)="SearchByCharacter('P')" class="btn btn-default">P</button>
+          <button (click)="SearchByCharacter('Q')" class="btn btn-default">Q</button>
+          <button (click)="SearchByCharacter('R')" class="btn btn-default">R</button>
+          <button (click)="SearchByCharacter('S')" class="btn btn-default">S</button>
+          <button (click)="SearchByCharacter('T')" class="btn btn-default">T</button>
+          <button (click)="SearchByCharacter('U')" class="btn btn-default">U</button>
+          <button (click)="SearchByCharacter('V')" class="btn btn-default">V</button>
+          <button (click)="SearchByCharacter('W')" class="btn btn-default">W</button>
+          <button (click)="SearchByCharacter('X')" class="btn btn-default">X</button>
+          <button (click)="SearchByCharacter('Y')" class="btn btn-default">Y</button>
+          <button (click)="SearchByCharacter('Z')" class="btn btn-default">Z</button>
         </div>
       </div>
     </div>
 </div>
 
-<div class="wrap">
-    <div class="search">
-        <input type="text" class="searchTerm" placeholder="What are you looking for?">
-        <button type="submit" class="searchButton">
-        <i class="fa fa-search"></i>
-        </button>
-    </div>
-</div>
 
 
-<div id="topsales">
-    <div class="product" *ngFor="let p of products">
-      <a class="product-here" href="single-page.html"><img src="{{p.image}}" title="product-name" style="height: 210px;width: 170px;" /></a>
-      <h4 id="proname"><a href="single-page.html">{{p.name}}</a></h4>
-      <a class="product-btn" href="single-page.html"><span>{{p.price}} тг</span><small>Купить</small><label> </label></a>
+<div class="row">
+    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let p of products">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" width="400px;" src="{{p.image}}" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="#">{{p.name}}</a>
+          </h4>
+          <h5>${{p.price}}</h5>
+          <p class="card-text">{{p.description}}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+        </div>
+      </div>
     </div>
+
   </div>
-  
+

@@ -17,6 +17,7 @@ export class CategoryComponent implements OnInit {
   ngOnInit() {
     this.provider.getCategories().then(res => {
       this.categories = res;
+      this.getCategoryProducts(this.categories[0])
     });
   
   }

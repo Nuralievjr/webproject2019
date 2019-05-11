@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from api.models import Category
+from api.models import Category,ContactModel,Product
+from django.contrib.auth.models import User
 
 
 class CategorySerializer(serializers.Serializer):
@@ -29,10 +30,21 @@ class CategorySerializerModel(serializers.ModelSerializer):
         # fields = '__all__'
 
 
-class ProductSerializer(serializers.Serializer):
-    id = serializers.IntegerField(read_only=True)
-    name = serializers.CharField(required=True)
-    price = serializers.FloatField()
-    count = serializers.IntegerField()
-    image = serializers.ImageField()
-    visit = serializers.IntegerField()
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ('id', 'name', 'price', 'count', 'image', 'category', 'visit', 'description')
+
+
+
+class ContactSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ContactModel
+        fields = ('name', 'email', 'phone', 'message')
+        # fields = '__all__'
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'password', 'email',)

@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'api',
     'corsheaders',
     'rest_framework',
+    'django_filters',
+
 ]
 
 MIDDLEWARE = [
@@ -106,6 +108,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+
 
 
 # Internationalization

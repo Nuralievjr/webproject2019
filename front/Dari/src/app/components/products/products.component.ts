@@ -5,12 +5,13 @@ import { ProviderService } from 'src/app/shared/serivces/provider.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css','bootstrap.css']
+  styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
 
 
   public products: IProduct[] = []
+
   constructor(private provider: ProviderService) { }
 
   ngOnInit() {
@@ -18,6 +19,11 @@ export class ProductsComponent implements OnInit {
       this.products = res;
     });
 
+  }
+  SearchByCharacter(letter:any){
+    this.provider.SearchByСharacter(letter).then(res=> {
+      this.products = res;
+    });
   }
 
 }

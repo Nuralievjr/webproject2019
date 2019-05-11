@@ -1,9 +1,18 @@
 from django.http import Http404, JsonResponse
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
+from rest_framework.decorators import api_view
 from rest_framework.permissions import IsAuthenticated
 import copy
-from api.models import Category,Product
-from api.serializer import CategorySerializerModel,ProductSerializer
+from api.models import Category,Product,ContactModel
+from api.serializer import CategorySerializerModel,ProductSerializer,ContactSerializer
+from rest_framework import filters
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from django.views.decorators.csrf import csrf_exempt
+from api.filters import ProductFilter
+
 
 
 class CategoryList(generics.ListCreateAPIView):
@@ -40,7 +49,7 @@ class CategoryProductList(generics.ListCreateAPIView):
     #search_fields = ('name', 'price', 'count')
 
     # TODO OrderingFilter
-    #ordering_fields = ('name', 'price')
+    #ordering_fields = ('-count',)
 
     #ordering = ('price',)
 
@@ -65,16 +74,51 @@ class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+
+@api_view(['PUT'])
+def putLike(request, pk):
+    if request.method == 'PUT':
+        try:
+            product = Product.objects.get(id=pk)
+        except Product.DoesNotExist as e:
+            raise Response(status = status.HTTP_404_NOT_FOUND)
+        product.visit += 1
+        product.save()
+        return Response(status=status.HTTP_200_OK)
+    return Response({"error":"bad request"})
+
+
+
 class Products(generics.ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    filter_backends = (DjangoFilterBackend,)
+    #filterset_fields = ('name',)
+    filter_class = ProductFilter
+
+
 
 
 class ProductsPopular(generics.ListAPIView):
-    queryset = Product.objects.all()
-    queryset = queryset.filter(visit__gte=0)
     serializer_class = ProductSerializer
+    filter_backends = (filters.OrderingFilter,)
+    ordering = ('-visit',)
+   # queryset = Product.objects.all()
+    def get_queryset(self):
+        try:
+            queryset = Product.objects.all()
+        except Category.DoesNotExist:
+            raise Http404
+        return queryset
 
+    #queryset = queryset.filter(visit__gte=0)
+
+
+
+
+class Contact(generics.CreateAPIView):
+    queryset = ContactModel.objects.all()
+    serializer_class = ContactSerializer
 
 
 

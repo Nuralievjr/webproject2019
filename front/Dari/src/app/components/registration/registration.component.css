@@ -1,0 +1,11 @@
+.container{
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-bottom: 10%;
+}
+legend{
+    border-bottom: none;
+}
+.btn-success{
+    background-image: linear-gradient(to bottom, darkcyan, darkcyan);
+}

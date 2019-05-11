@@ -12,6 +12,9 @@ import { AuthInterceptor } from './AuthInterceptor';
 import { ProductsComponent } from './components/products/products.component';
 import { CategoryComponent } from './components/category/category.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ProductdetailComponent } from './components/productdetail/productdetail.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { ContactComponent } from './components/contact/contact.component';
     HomeComponent,
     ProductsComponent,
     CategoryComponent,
-    ContactComponent
+    ContactComponent,
+    ProductdetailComponent,
+    RegistrationComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

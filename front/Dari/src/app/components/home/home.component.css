@@ -59,6 +59,7 @@
     height: 900px;
     width: 100%;
     background-color:white;
+    margin-left: 4%;
     margin-top: 12px;
     margin-bottom: 50px;
     display: flex;
@@ -73,9 +74,9 @@
     margin-top: 50px;
     margin-left: 80px;
     width: 230px;
-    height: 320px;
+    height: 370px;
     text-align: center;
-    border: 1px solid transparent;
+    border: 1px solid rgba(0, 0, 0, 0.24);
   
   }
   .product-here img{

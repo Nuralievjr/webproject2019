@@ -9,8 +9,16 @@ export interface ICategory{
     count:Number;
     image:String;
     visit:number;
+    description:string;
   }
   export interface IToken{
     token:string; 
   }
   
+
+  export interface IContact{
+    name: string;
+    email:string;
+    phone:string;
+    message:string;
+  }
