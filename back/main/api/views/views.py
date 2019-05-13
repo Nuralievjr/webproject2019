@@ -34,6 +34,7 @@ class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializerModel
 
+
 class CategoryProductList(generics.ListCreateAPIView):
     serializer_class = ProductSerializer
     #pagination_class = LimitOffsetPagination
@@ -103,15 +104,10 @@ class ProductsPopular(generics.ListAPIView):
     serializer_class = ProductSerializer
     filter_backends = (filters.OrderingFilter,)
     ordering = ('-visit',)
-   # queryset = Product.objects.all()
-    def get_queryset(self):
-        try:
-            queryset = Product.objects.all()
-        except Category.DoesNotExist:
-            raise Http404
-        return queryset
+    queryset = Product.objects.all()
 
-    #queryset = queryset.filter(visit__gte=0)
+
+    queryset = queryset.filter(visit__gte=10)
 
 
 
